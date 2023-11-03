@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KeepHash Cryptojackers Scanner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KeepHash</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Protection Level: <span id="protection-level">0%</span></p>
+                <p>Total Scanned Files: <span id="total-scanned-files">0</span></p>
+                <p>Total Corrupted Files: <span id="total-corrupted-files">0</span></p>
+                <button id="start-scan" class="btn btn-primary">Start Scan</button>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="log-box" style="height: 200px; overflow: auto; background-color: #222; color: #fff; padding: 10px;">
+                    <!-- Scanning logs will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ls
+
+    <script>
+        // You can use JavaScript to update values and append logs to the log-box.
+        // Example:
+        document.getElementById("protection-level").textContent = "50%";
+        document.getElementById("total-scanned-files").textContent = "100";
+        document.getElementById("total-corrupted-files").textContent = "5";
+
+        // Log example:
+        var logBox = document.querySelector(".log-box");
+        logBox.innerHTML += "Scanning started...<br>";
+        logBox.innerHTML += "Scanning file1...<br>";
+        // Append more log messages as needed.
+    </script>
+</body>
+</html>
