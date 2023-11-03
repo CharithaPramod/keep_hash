@@ -1,2 +1,2 @@
 # keep_hash
-Cryptojaking malware detection tool.
+Cryptojacking malware detection tool.
