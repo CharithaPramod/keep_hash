@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import pyshark
 
 def capture_network_data(pid, interface='eth0'):
@@ -48,7 +47,6 @@ for data in network_usage_data:
     print(f"Network data for PID {data['pid']}:")
     for packet in data['network_data']:
         print(packet)
-=======
 import pyshark
 
 def capture_network_data(pid, interface='eth0'):
@@ -98,4 +96,3 @@ for data in network_usage_data:
     print(f"Network data for PID {data['pid']}:")
     for packet in data['network_data']:
         print(packet)
->>>>>>> aebdb32a284f16a76dcdaeed42bbfcc427f9c797

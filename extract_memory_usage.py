@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import psutil
 
 def extract_memory_usage(untrusted_activities):
@@ -68,7 +67,6 @@ for data in memory_usage_data:
     print(f"Number of Threads: {data['num_threads']}")
     print(f"Page Faults: {data['page_faults']}")
     print(f"Peak Memory: {data['peak_memory']} bytes")
-=======
 import psutil
 
 def extract_memory_usage(untrusted_activities):
@@ -138,4 +136,3 @@ for data in memory_usage_data:
     print(f"Number of Threads: {data['num_threads']}")
     print(f"Page Faults: {data['page_faults']}")
     print(f"Peak Memory: {data['peak_memory']} bytes")
->>>>>>> aebdb32a284f16a76dcdaeed42bbfcc427f9c797

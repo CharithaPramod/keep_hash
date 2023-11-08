@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import re
 import psutil
 import os
@@ -99,7 +98,6 @@ def check_thread_count():
             return True
     except psutil.NoSuchProcess:
         pass
-=======
 import re
 import psutil
 import os
@@ -200,5 +198,4 @@ def check_thread_count():
             return True
     except psutil.NoSuchProcess:
         pass
->>>>>>> aebdb32a284f16a76dcdaeed42bbfcc427f9c797
     return False

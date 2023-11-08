@@ -39,6 +39,53 @@
 ls
 
     <script>
+        document.getElementById("start-scan").addEventListener("click", function () {
+            // update the button text
+            document.getElementById("start-scan").textContent = "Scanning...";
+
+            // clear the log box
+            var logBox = document.querySelector(".log-box");
+            logBox.innerHTML = "";
+
+            // send AJAX request to start the scan
+            fetch("/start_scan", {
+                method: "POST",
+            })
+            .then(function (response) {
+                if (response.staatus === 200) {
+                    response.json().then(function(data) {
+                        document.getElementById("start-scan").textContent = data.button_text;
+                    });
+                }
+                if (response.headers.has('log_message')) {
+                    // append log message to the log box
+                    logBox.innerHTML = response.headers.get('log_message');
+                }
+                // update the total scanned files value
+                document.getElementById("total-scanned-files").textContent = response.headers.get('total_scanned_files');
+            })
+            .catch(function(error) {
+                console.error("Error: " + error);
+            });
+            // var scanningLogs = [
+            //     {processName: "Process 1", checkResponse: "Completed"},
+            //     {processName: "Process 2", checkResponse: "Completed"},
+            //     {processName: "Process 3", checkResponse: "Completed"},
+            // ];
+
+            var logBox = document.getElementById(".log-box");
+            logBox.innerHTML = "";
+
+            logBox.removeChild(logPlaceholder);
+
+            scanningLogs.forEach(function (log) {
+                var logMessage = document.createElement("p");
+                logMessage.textContent = "Scanning" + log.processName + " - " + log.checkResponse;
+                logBox.appendChild(logMessage);
+
+                logBox.scrollTop = logBox.scrollHeight;
+            });
+        });
         // You can use JavaScript to update values and append logs to the log-box.
         // Example:
         document.getElementById("protection-level").textContent = "50%";
